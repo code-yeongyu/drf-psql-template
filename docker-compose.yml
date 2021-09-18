@@ -1,0 +1,30 @@
+version: "3"
+
+services:
+  db:
+    image: postgres
+    ports:
+      - "5432:5432"
+    environment:
+      - POSTGRES_DB=database
+      - POSTGRES_USER=postgres
+      - POSTGRES_INITDB_ARGS="--encoding=UTF-8"
+      - POSTGRES_HOST_AUTH_METHOD=trust
+      - ALLOW_IP_RANGE="0.0.0.0/0"
+
+  test_db:
+    image: postgres
+    ports:
+      - "5433:5432"
+    tmpfs:
+      - /var/lib/postgresql/data
+    environment:
+      - POSTGRES_DB=database
+      - POSTGRES_USER=postgres
+      - POSTGRES_INITDB_ARGS="--encoding=UTF-8"
+      - POSTGRES_HOST_AUTH_METHOD=trust
+      - ALLOW_IP_RANGE="0.0.0.0/0"
+    command:
+      - "postgres"
+      - "-c"
+      - "fsync=off"
