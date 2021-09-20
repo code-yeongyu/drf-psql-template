@@ -12,15 +12,14 @@ SECRET_KEY = getenv("DJANGO_SECRET_KEY")
 if SECRET_KEY is None or SECRET_KEY == "":
     SECRET_KEY = "707m!rpdzi2ta8jv6$y2fwjx@j1%o^02+45%1o=r%jm$m8oma!"
 
-# SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = False
+
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.postgresql_psycopg2',
-        'NAME': getenv("PROD_DB_NAME"),
-        'USER': getenv("PROD_DB_USER"),
-        'PASSWORD': getenv("PROD_DB_PASSWORD"),
-        'HOST': getenv("PROD_DB_HOST"),
-        'PORT': 5432,
+        'NAME': 'database',
+        'USER': 'postgres',
+        'HOST': "db" if getenv("IS_DOCKER") == "true" else '127.0.0.1',
+        'PORT': '5432',
     }
 }
