@@ -64,7 +64,7 @@ In this case, deleting the image that we build can be the answer, like:
 docker image rm drf-psql-template_was
 ```
 
-Now you can build your application, like above chapter.
+Now you can build your application, [like above chapter](###Run).
 
 ## Run Tests
 
