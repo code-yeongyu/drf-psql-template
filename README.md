@@ -86,7 +86,7 @@ python3 manage.py startapp "appname"
 mv "appname" apps
 ```
 
-Since we have seperated our own apps into `apps` directory, we have to change our app's name from 'appname/apps.py`.
+Since we have seperated our own apps into `apps` directory, we have to change our app's name from `appname/apps.py`.
 
 Change like following:
 
