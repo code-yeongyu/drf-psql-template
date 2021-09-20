@@ -134,3 +134,9 @@ INSTALLED_APPS = [
 ### Write some tests
 
 ### Register views
+
+## What you can do more
+
+- Setup CI / CD
+- Add plugins to repository like codecov
+- ETC ...
