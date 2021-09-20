@@ -1,0 +1,12 @@
+*.pyc
+__pycache__
+.venv/
+volumes/
+.vscode/
+.env
+.gitignore
+docker-compose.yml
+Dockerfile
+poetry.toml
+LICENSE
+README.md
