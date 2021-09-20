@@ -1,5 +1,24 @@
 # DRF-PSQL-TEMPLATE
 
+## GET THESE JUST BY USING THIS TEMPLATE
+
+- Pre-written Dockerfile
+- Pre-setted Docker-Compose
+  - PostgreSQL Database (also for test db)
+  - Nginx
+  - WAS (Django)
+- Ready-to-production
+  - Required packages are already added to dependencies
+    - Poetry
+    - Pytest
+    - Django
+    - DRF
+    - Document generator: DRF-Spectacular
+    - ETC ...
+  - Seperated settings file
+  - Seperated user apps into `apps/` directory
+  - Seperated `urls.py` into `backend/` directory and `api/` directory
+
 ## Prerequisites
 
 - python3.9
