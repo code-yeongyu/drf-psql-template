@@ -31,10 +31,46 @@ poetry shell
 python3 manage.py runserver 0.0.0.0:8000
 ```
 
+## Run WAS using Docker Compose
+
+### Define Environment Variables
+
+Create a file named `.env` and fill following fields:
+
+```env
+DJANGO_SECRET_KEY=your secret key
+DJANGO_SETTINGS_MODULE=your settings module name
+
+# following values are optional
+PROD_DB_NAME=your production database name
+PROD_DB_USER=your production database user
+PROD_DB_PASSWORD=your production database password
+PROD_DB_HOST=your production database host
+```
+
+### Run
+
+```sh
+docker-compose up -d --build db was ws
+```
+
+### TroubleShooting
+
+The reason is that we haven't defined our image's version.
+
+In this case, deleting the image that we build can be the answer, like:
+
+```sh
+docker image rm drf-psql-template_was
+```
+
+Now you can build your application, like above chapter.
+
 ## Run Tests
 
 ```sh
-pytest .
+docker-compose up --build test_db
+pytest -vvk .
 ```
 
 ---
