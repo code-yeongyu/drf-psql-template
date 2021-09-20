@@ -28,3 +28,27 @@ services:
       - "postgres"
       - "-c"
       - "fsync=off"
+
+  was:
+    build: .
+    restart: "unless-stopped"
+    expose:
+      - 8000
+    environment:
+      - "DJANGO_SECRET_KEY=${DJANGO_SECRET_KEY}"
+      - "DJANGO_SETTINGS_MODULE=${DJANGO_SETTINGS_MODULE}"
+    volumes:
+      - ./volumes/staticfiles/:/app/backend/static
+
+  ws:
+    build: ./nginx
+    restart: "unless-stopped"
+    depends_on:
+      - was
+    ports:
+      - "80:80"
+    deploy:
+      restart_policy:
+        condition: on-failure
+    volumes:
+      - ./volumes/staticfiles/:/home/app/backend/static
