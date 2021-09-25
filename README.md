@@ -35,7 +35,7 @@ poetry install
 ## Run PostgreSQL
 
 ```sh
-docker compose up -d
+docker compose up -d db test_db
 ```
 
 ## Run your shell in virtual env
