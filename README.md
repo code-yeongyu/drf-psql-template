@@ -19,6 +19,9 @@
   - Seperated user apps into `apps/` directory
   - Seperated `urls.py` into `backend/` directory and `api/` directory
 
+### Examples
+- <https://github.com/shoeguard/shoeguard-backend>
+
 ## Prerequisites
 
 - python3.9
