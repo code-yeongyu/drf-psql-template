@@ -9,6 +9,7 @@
   - WAS (Django)
 - Ready-to-production
   - Required packages are already added to dependencies
+    - Mypy
     - Poetry
     - Pytest
     - Django
