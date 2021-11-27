@@ -10,6 +10,7 @@
 - Ready-to-production
   - Required packages are already added to dependencies
     - Mypy
+    - Django-stubs
     - Poetry
     - Pytest
     - Django
@@ -21,6 +22,7 @@
   - Seperated `urls.py` into `backend/` directory and `api/` directory
 
 ### Examples
+
 - <https://github.com/shoeguard/shoeguard-backend>
 
 ## Prerequisites
