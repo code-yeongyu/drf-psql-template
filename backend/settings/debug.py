@@ -8,9 +8,10 @@ load_dotenv()
 
 # SECURITY WARNING: keep the secret key used in production secret!
 
-SECRET_KEY = getenv("DJANGO_SECRET_KEY")
-if SECRET_KEY is None or SECRET_KEY == "":
-    SECRET_KEY = "707m!rpdzi2ta8jv6$y2fwjx@j1%o^02+45%1o=r%jm$m8oma!"
+SECRET_KEY = getenv(
+    "DJANGO_SECRET_KEY",
+    "707m!rpdzi2ta8jv6$y2fwjx@j1%o^02+45%1o=r%jm$m8oma!",
+)
 
 DEBUG = False
 
